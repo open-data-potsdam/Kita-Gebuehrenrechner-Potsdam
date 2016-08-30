@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>Kita-Geb&uuml;hren-Rechner f&uuml;r Potsdam</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Bootstrap -->
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+
+	<link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" /> 
+
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="style.css">	
+
+	<!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<script type="text/javascript" src="javascript.js"></script>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-8 col-md-offset-2 panel panel-default">
+
+				<h1>Kita-Geb&uuml;hren-Rechner</h1>
+				<h2>für Potsdam</h2>
+
+			</div>
+
+
+			<div class="col-md-8 col-md-offset-2 panel panel-default">
+				<form class="">
+					<table>
+					
+						<tr>
+						 	<th> 
+						 		<strong>Gehalt Elternteil 1 in €:</strong>
+					 		</th>
+					 		<th> 
+						 		<strong>Gehalt Elternteil 2 in €:</strong>
+					 		</th>
+				 		</tr>
+				 		<tr>
+				 			<th>
+				 				<p class="input">
+						 			<input type="number" name="gehalt1" id="gehalt1" placeholder="0,00 €">
+					 			</p>
+						 	</th>
+						 	<th>
+						 		<p class="input">
+						 			<input type="number" name="gehalt2" id="gehalt2" placeholder="0,00 €">
+					 			</p>
+						 	</th>
+					 	</tr>
+  					</table>
+  					
+
+  					<label>Das Gesamtgehalt der Eltern beträgt: 
+						<b><output id="gesamtgehalt" type="number"></output> Euro.</b> 
+					</label>
+
+				</form>	
+			</div>	
+
+
+			<div class="col-md-8 col-md-offset-2 panel panel-default">
+					    <form name="Betreuungsform">
+							 <b>Art der Betreuung:</b><br>
+							  <label><input type="radio" name="Betreuungsart" value="krippe" checked> <span id="krippe">Krippe</span></label><br>
+							  <label><input type="radio" name="Betreuungsart" value="kindergarten"> <span id="kindergarten">Kindergarten</span></label><br>
+							  <label><input type="radio" name="Betreuungsart" value="hort"> <span id="hort">Hort</span></label>
+						</form>
+
+				</div>
+
+
+				<div class="col-md-8 col-md-offset-2 panel panel-default">
+					    <form name="Stundenform">
+							 <b>Anzahl der Stunden pro Tag:</b><br>
+							  <label><input type="radio" name="Stundenanzahl" value="6" checked> &lt; <span id="stunden-1">6</span> Stunden</label><br>
+							  <label><input type="radio" name="Stundenanzahl" value="8"> &lt; <span id="stunden-2">8</span> Stunden</label><br>
+							  <label><input type="radio" name="Stundenanzahl" value="10"> &lt; <span id="stunden-3">10</span> Stunden</label>
+						</form>
+				</div>
+
+
+	
+			<div class="col-md-8 col-md-offset-2 panel panel-default">
+				<label>Die monatlichen Geb&uuml;hren betragen: 
+					<b><output id="ergebnis" type="number"></output> Euro.</b> 
+				</label>
+			</div>
+
+
+			<div class="col-md-8 col-md-offset-2 panel panel-default">
+				<span style="color:#FF0000">
+					<b>Achtung:</b> Dieser Rechner ist kein offizielles Angebot der Stadt Potsdam - alle Angaben ohne Gewähr!
+				</span>	
+			</div>
+
+			</div><!-- //main content -->
+		</div><!-- //row -->
+	</div> <!-- //container -->
+
+	
+	<p>&nbsp;</p>
+
+
+
+    <footer class="footer">
+	    	<p class="text-muted">
+	    		<small class="text-muted">
+	    			Dieser Rechner wurde im Rahmen des <a href="https://codefor.de/potsdam/" target="_blank">OKlabs Potsdam</a> basierend auf den <a href="https://www.potsdam.de/content/kita-satzung-0" target="_blank">Daten der Stadt</a> (2016) entwickelt. Foto von <a href="https://www.flickr.com/photos/130139363@N07/18379668092/in/photostream/" target="_blank">Linh Lưu Huệ</a> (<a href="http://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">CC-Attribution</a>). 
+	    		</small>
+	    	</p>
+	</footer>
+
+
+</body>
+</html>
