@@ -10,8 +10,9 @@
 	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
 
+<!-- 
 	<link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" /> 
-
+ -->
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
@@ -38,72 +39,95 @@
 
 
 			<div class="col-md-8 col-md-offset-2 panel panel-default">
-				<form class="">
-					<table>
-					
-						<tr>
-						 	<th> 
-						 		<strong>Gehalt Elternteil 1 in €:</strong>
-					 		</th>
-					 		<th> 
-						 		<strong>Gehalt Elternteil 2 in €:</strong>
-					 		</th>
-				 		</tr>
-				 		<tr>
-				 			<th>
-				 				<p class="input">
-						 			<input type="number" name="gehalt1" id="gehalt1" placeholder="0,00 €">
-					 			</p>
-						 	</th>
-						 	<th>
-						 		<p class="input">
-						 			<input type="number" name="gehalt2" id="gehalt2" placeholder="0,00 €">
-					 			</p>
-						 	</th>
-					 	</tr>
-  					</table>
+				<table class="table">
+				
+					<tr>
+					 	<th> 
+					 		<strong>Gehalt erstes Elternteil in €:</strong>
+				 		</th>
+				 		<th> 
+					 		<strong>Gehalt zweites Elternteil in €:</strong>
+				 		</th>
+			 		</tr>
+			 		<tr>
+			 			<th>
+
+			 				<p class="input">
+					 			<input type="number" name="gehalt1" id="gehalt1" placeholder="0 €">
+				 			</p>
+					 	</th>
+					 	<th>
+					 		
+					 		<p class="input">
+					 			<input type="number" name="gehalt2" id="gehalt2" placeholder="0 €">
+				 			</p>
+					 	</th>
+				 	</tr>
+				</table>
   					
-
-  					<label>Das Gesamtgehalt der Eltern beträgt: 
-						<b><output id="gesamtgehalt" type="number"></output> Euro.</b> 
-					</label>
-
-				</form>	
+				Das Gesamtgehalt der beiden Eltern beträgt: <b><output id="gesamtgehalt" type="number"></output> €.</b> 
 			</div>	
 
 
 			<div class="col-md-8 col-md-offset-2 panel panel-default">
-					    <form name="Betreuungsform">
-							 <b>Art der Betreuung:</b><br>
-							  <label><input type="radio" name="Betreuungsart" value="krippe" checked> <span id="krippe">Krippe</span></label><br>
-							  <label><input type="radio" name="Betreuungsart" value="kindergarten"> <span id="kindergarten">Kindergarten</span></label><br>
-							  <label><input type="radio" name="Betreuungsart" value="hort"> <span id="hort">Hort</span></label>
-						</form>
+				<form name="Betreuungsform">
+					 <b>Art der Betreuung:</b><br>
+					  <label><input type="radio" name="Betreuungsart" value="krippe" checked> <span id="krippe">Krippe</span></label><br>
+					  <label><input type="radio" name="Betreuungsart" value="kindergarten"> <span id="kindergarten">Kindergarten</span></label><br>
+					  <label><input type="radio" name="Betreuungsart" value="hort"> <span id="hort">Hort</span></label>
+				</form>
+			</div>
 
-				</div>
+
+			<div class="col-md-8 col-md-offset-2 panel panel-default">
+			    <form name="Stundenform">
+					 <b>Anzahl der Stunden pro Tag:</b><br>
+					 <label><input type="radio" name="Stundenanzahl" value="6" checked> &lt; <span id="stunden-1">6</span> Stunden</label><br>
+					 <label><input type="radio" name="Stundenanzahl" value="8"> &lt; <span id="stunden-2">8</span>Stunden</label><br>
+					 <label><input type="radio" name="Stundenanzahl" value="10"> &lt; <span id="stunden-3">10</span> Stunden</label>
+				</form>
+			</div>
 
 
-				<div class="col-md-8 col-md-offset-2 panel panel-default">
-					    <form name="Stundenform">
-							 <b>Anzahl der Stunden pro Tag:</b><br>
-							  <label><input type="radio" name="Stundenanzahl" value="6" checked> &lt; <span id="stunden-1">6</span> Stunden</label><br>
-							  <label><input type="radio" name="Stundenanzahl" value="8"> &lt; <span id="stunden-2">8</span> Stunden</label><br>
-							  <label><input type="radio" name="Stundenanzahl" value="10"> &lt; <span id="stunden-3">10</span> Stunden</label>
-						</form>
-				</div>
+			<div class="col-md-8 col-md-offset-2 panel panel-default">
+				<form name="Kinderform">
+					<b>Anzahl der Kinder insgesamt: </b><br>
+					<table class="table">
+						<th>	
+							<label><input type="radio" name="anzahlKinder" value="1" checked><span id="kinder-1"> 1</span> </label>
+						</th>
+						<th>	
+							<label><input type="radio" name="anzahlKinder" value="0.8"><span id="kinder-2"> 2</span></label>
+						</th>
+						<th>	
+							<label><input type="radio" name="anzahlKinder" value="0.6"><span id="kinder-3"> 3</span></label>
+						</th>
+						<th>	
+							<label><input type="radio" name="anzahlKinder" value="0.4"><span id="kinder-4"> 4</span></label>
+						</th>	
+						<th>
+							<label><input type="radio" name="anzahlKinder" value="0.2"><span id="kinder-5"> 5</span></label>
+						</th>
+						<th>
+							<label><input type="radio" name="anzahlKinder" value="0"><span id="kinder-6"> >=6</span></label>
+						</th>	
+					</table>
+				</form>
+			</div>
 
 
 	
 			<div class="col-md-8 col-md-offset-2 panel panel-default">
-				<label>Die monatlichen Geb&uuml;hren betragen: 
-					<b><output id="ergebnis" type="number"></output> Euro.</b> 
-				</label>
+				<b>
+				Die monatlichen Gebühren für das Kind betragen: 
+					<b><output id="gebuehr" type="number"></output> €.</b> 
+				</b>
 			</div>
 
 
 			<div class="col-md-8 col-md-offset-2 panel panel-default">
 				<span style="color:#FF0000">
-					<b>Achtung:</b> Dieser Rechner ist kein offizielles Angebot der Stadt Potsdam - alle Angaben ohne Gewähr!
+					<b>Hinweis: dieser Rechner kein offizielles Angebot der Stadt Potsdam, alle Angaben ohne Gewähr!</b>
 				</span>	
 			</div>
 
@@ -119,11 +143,13 @@
     <footer class="footer">
 	    	<p class="text-muted">
 	    		<small class="text-muted">
-	    			Dieser Rechner wurde im Rahmen des <a href="https://codefor.de/potsdam/" target="_blank">OKlabs Potsdam</a> basierend auf den <a href="https://www.potsdam.de/content/kita-satzung-0" target="_blank">Daten der Stadt</a> (2016) entwickelt. Foto von <a href="https://www.flickr.com/photos/130139363@N07/18379668092/in/photostream/" target="_blank">Linh Lưu Huệ</a> (<a href="http://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">CC-Attribution</a>). 
+	    			Entstanden im <a href="https://codefor.de/potsdam/" target="_blank">OK Lab Potsdam</a> basierend auf der <a href="https://www.potsdam.de/content/kita-satzung-0" target="_blank">Kita-Satzung</a> (2016). <br>
+	    			Foto von <a href="https://www.flickr.com/photos/130139363@N07/18379668092/in/photostream/" target="_blank">Linh Lưu Huệ</a> (<a href="http://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">CC-Lizenz</a>), Font: <a href="https://www.fontsquirrel.com/fonts/open-sans" target="_blank">Open Sans</a> (<a href="https://www.fontsquirrel.com/license/open-sans" target="_blank">Apache v2.0 Lizenz</a>). 
 	    		</small>
 	    	</p>
 	</footer>
 
+	
 
 </body>
 </html>

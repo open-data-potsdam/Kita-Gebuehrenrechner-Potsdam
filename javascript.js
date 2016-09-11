@@ -1,12 +1,17 @@
 function berechne_gebuehren () {
 
 
-	//var gehaltId = ergebnis = $( "#slider" ).slider( "value" );
+	var ergebnis = 0;
 	var gehaltId = -1;
 	var stundenAnzahl = radioWert(document.Stundenform.Stundenanzahl);
 	var betreuungsArt = radioWert(document.Betreuungsform.Betreuungsart);
-
 	
+	var multiplikatorKinderAnzahl = parseFloat(radioWert(document.Kinderform.anzahlKinder));
+
+	/*
+		Ermitteln, in welchem Gehaltsbereich sich das eingegebene Gehalt befindet
+		(vergl. Gebühren aus dem Kita-Satzungs PDF)
+	*/
 	if (gesamtgehalt.value < 22001) {
 		gehaltId = 0;
 	}
@@ -177,16 +182,16 @@ function berechne_gebuehren () {
 		
 			if (stundenAnzahl == 6)
 			{
-				var ergebnis = json.kitagebueren[gehaltId].krippe.stunden6;
+				ergebnis = json.kitagebueren[gehaltId].krippe.stunden6;
 			}
 			else if (stundenAnzahl == 8)
 			{
-				var ergebnis = json.kitagebueren[gehaltId].krippe.stunden8;
+				ergebnis = json.kitagebueren[gehaltId].krippe.stunden8;
 
 			}
 			else
 			{
-				var ergebnis = json.kitagebueren[gehaltId].krippe.stunden10;
+				ergebnis = json.kitagebueren[gehaltId].krippe.stunden10;
 			}
 		}
 		else if (betreuungsArt == 'kindergarten')
@@ -196,16 +201,16 @@ function berechne_gebuehren () {
 
 			if (stundenAnzahl == 6)
 			{
-				var ergebnis = json.kitagebueren[gehaltId].kindergarten.stunden6;
+				ergebnis = json.kitagebueren[gehaltId].kindergarten.stunden6;
 			}
 			else if (stundenAnzahl == 8)
 			{
-				var ergebnis = json.kitagebueren[gehaltId].kindergarten.stunden8;
+				ergebnis = json.kitagebueren[gehaltId].kindergarten.stunden8;
 
 			}
 			else
 			{
-				var ergebnis = json.kitagebueren[gehaltId].kindergarten.stunden10;
+				ergebnis = json.kitagebueren[gehaltId].kindergarten.stunden10;
 			}
 
 		}
@@ -214,20 +219,22 @@ function berechne_gebuehren () {
 
 			if (stundenAnzahl == 6)
 			{
-				var ergebnis = json.kitagebueren[gehaltId].hort.stunden4;
+				ergebnis = json.kitagebueren[gehaltId].hort.stunden4;
 			}
 			else if (stundenAnzahl == 8)
 			{
-				var ergebnis = json.kitagebueren[gehaltId].hort.stunden6;
+				ergebnis = json.kitagebueren[gehaltId].hort.stunden6;
 
 			}
 			else
 			{
-				var ergebnis = json.kitagebueren[gehaltId].hort.stunden8;
+				ergebnis = json.kitagebueren[gehaltId].hort.stunden8;
 			}
 		}
 
-		document.getElementById("ergebnis").value = ergebnis;
+		document.getElementById("gebuehr").value = Math.round(ergebnis * multiplikatorKinderAnzahl *100) /100;
+
+		//document.getElementById("gebuehr").value = ergebnis;
 
 	});
 }
@@ -255,6 +262,7 @@ $( function() {
   	}
 });
 
+
 $( "#amount" ).val( $( "#slider" ).slider( "value" ) + " Euro");
 } );
 
@@ -263,7 +271,7 @@ $( "#amount" ).val( $( "#slider" ).slider( "value" ) + " Euro");
 $( document ).ready(function() {
 
 	/* Initial auf Null */
-	$('#ergebnis').html('0');
+	$('#gebuehr').html('0');
 
 	/* Stundenanzahl ändern */
 	$('input[name="Betreuungsart"]').on('change', function() {
@@ -301,12 +309,12 @@ $( document ).ready(function() {
 	/* Initial auf Null */
 	$('#gesamtgehalt').html('0');
 
-	$('input[id="gehalt1"]').on('change', function(){
+	$('input[id="gehalt1"]').on('change, keyup', function(){
 
 		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
 		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
 
-		//falls im anderen Feld noch keine Eingabe steht
+		//falls im anderen Feld keine Eingabe steht (=false)
 		if (!gehalt2)
 		{
 			gehalt2 = 0;
@@ -320,19 +328,69 @@ $( document ).ready(function() {
 
 		$('#gesamtgehalt').html(gehalt3);
 
+		berechne_gebuehren();
+	 		
+	})
 
+
+	$('input[id="gehalt2"]').on('change, keyup', function(){
+
+		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
+		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
+
+		//falls im anderen Feld keine Eingabe steht (=false)
+		if (!gehalt1)
+		{
+			gehalt1 = 0;
+		}
+		if (!gehalt2)
+		{
+			gehalt2 = 0;
+		}
+
+		var gehalt3 = gehalt1 + gehalt2;
+
+		$('#gesamtgehalt').html(gehalt3);
 
 		berechne_gebuehren();
 	 		
 	})
 
 
-	$('input[id="gehalt2"]').on('change', function(){
+
+ 	//change, keyup und mousup lassen sich nicht kombinieren???
+ 	//deshalb die Blöcke nun doppelt
+	$('input[id="gehalt1"]').on('mouseup', function(){
 
 		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
 		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
 
-		//falls im anderen Feld noch keine Eingabe steht
+		//falls im anderen Feld keine Eingabe steht (=false)
+		if (!gehalt2)
+		{
+			gehalt2 = 0;
+		}
+		if (!gehalt1)
+		{
+			gehalt1 = 0;
+		}
+
+		var gehalt3 = gehalt1 + gehalt2;
+
+		$('#gesamtgehalt').html(gehalt3);
+
+		berechne_gebuehren();
+	 		
+	})
+
+
+
+	$('input[id="gehalt2"]').on('mouseup', function(){
+
+		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
+		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
+
+		//falls im anderen Feld keine Eingabe steht (=false)
 		if (!gehalt1)
 		{
 			gehalt1 = 0;
@@ -357,7 +415,7 @@ $( document ).ready(function() {
 
 
 /* Änderungen im Formular */
-$('input[name="Betreuungsart"], input[name="Stundenanzahl"]').on('change', function(){
+$('input[name="Betreuungsart"], input[name="Stundenanzahl"], input[name="anzahlKinder"]').on('change', function(){
 
 	berechne_gebuehren();
 
