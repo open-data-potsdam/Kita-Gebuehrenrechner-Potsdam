@@ -1,4 +1,4 @@
-function berechne_gebuehren () {
+function berechneKitaGebuehren () {
 
 	var ergebnis = 0;
 	var gehaltId = -1;
@@ -257,6 +257,8 @@ function berechneGesamtgehalt() {
 
 	$('#gesamtgehalt').html(gehalt1 + gehalt2);
 
+	berechneKitaGebuehren();
+
 }
 
 
@@ -272,11 +274,15 @@ function radioWert(rObj) {
 
 
 
+
+//Diese Funktion löst alle Events aus
 $( document ).ready(function() {
 
 	/* Initial auf Null */
 	$('#gebuehr').html('0');
 	$('#gesamtgehalt').html('0');
+	var gehalt1 = 0;
+	var gehalt2 = 0;
 
 	/* Stundenanzahl ändern */
 	$('input[name="Betreuungsart"]').on('change', function() {
@@ -297,77 +303,37 @@ $( document ).ready(function() {
 				$('#stunden-3').html('10');
 				break;
 		}
-	}
-);
+	});
 
 
-
-
-// Gehalt der beiden Elternteile addieren
-$( document ).ready(function() {
-
-	$('#gesamtgehalt').html(0);
-
-	var gehalt1 = 0;
-	var gehalt2 = 0;
-
-	/* Initial auf Null */
-	$('#gesamtgehalt').html('0');
 
 	$('input[id="gehalt1"]').on('change, keyup', function(){
-
 		berechneGesamtgehalt(); 
-		berechne_gebuehren();
-
-	 		
 	})
 
 
 	$('input[id="gehalt2"]').on('change, keyup', function(){
-
 		berechneGesamtgehalt(); 
-		berechne_gebuehren();
-
-	
 	})
-
-
 
  	//change, keyup und mousup lassen sich nicht kombinieren???
  	//deshalb die Blöcke nun doppelt
 	$('input[id="gehalt1"]').on('mouseup', function(){
-
 		berechneGesamtgehalt(); 
-		berechne_gebuehren();
-
-	 		
 	})
-
 
 
 	$('input[id="gehalt2"]').on('mouseup', function(){
-
 		berechneGesamtgehalt(); 
-		berechne_gebuehren();
-
-	 		
 	})
 
-});
 
 
+	/* Änderungen im Formular */
+	$('input[name="Betreuungsart"], input[name="Stundenanzahl"], input[name="anzahlKinder"]').on('change', function(){
 
+		berechne_gebuehren();
 
-
-
-
-
-/* Änderungen im Formular */
-$('input[name="Betreuungsart"], input[name="Stundenanzahl"], input[name="anzahlKinder"]').on('change', function(){
-
-	berechne_gebuehren();
-
-});
-
+	});
 
 });
