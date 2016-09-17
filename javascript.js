@@ -1,6 +1,5 @@
 function berechne_gebuehren () {
 
-
 	var ergebnis = 0;
 	var gehaltId = -1;
 	var stundenAnzahl = radioWert(document.Stundenform.Stundenanzahl);
@@ -234,10 +233,32 @@ function berechne_gebuehren () {
 
 		document.getElementById("gebuehr").value = Math.round(ergebnis * multiplikatorKinderAnzahl *100) /100;
 
-		//document.getElementById("gebuehr").value = ergebnis;
-
 	});
 }
+
+
+
+//Addieset die beiden Felder mit den Gehältern zum Gesmatgehalt
+function berechneGesamtgehalt() {
+
+	gehalt1 = parseFloat(document.getElementById("gehalt1").value);
+	gehalt2 = parseFloat(document.getElementById("gehalt2").value);
+
+	//falls im anderen Feld keine Eingabe steht (=false)
+	if (!gehalt1)
+	{
+		gehalt1 = 0;
+
+	}
+	if (!gehalt2)
+	{
+		gehalt2 = 0;
+	}
+
+	$('#gesamtgehalt').html(gehalt1 + gehalt2);
+
+}
+
 
 
 
@@ -250,28 +271,12 @@ function radioWert(rObj) {
 
 
 
-$( function() {
-	$( "#slider" ).slider({
-  	value: 0,
-  	min: 22001,
-  	max: 149501,
-  	step: 2500,
-  	slide: function( event, ui ) {
-    $( "#amount" ).val( ui.value + " Euro");
-    	berechne_gebuehren();
-  	}
-});
-
-
-$( "#amount" ).val( $( "#slider" ).slider( "value" ) + " Euro");
-} );
-
-
 
 $( document ).ready(function() {
 
 	/* Initial auf Null */
 	$('#gebuehr').html('0');
+	$('#gesamtgehalt').html('0');
 
 	/* Stundenanzahl ändern */
 	$('input[name="Betreuungsart"]').on('change', function() {
@@ -311,49 +316,15 @@ $( document ).ready(function() {
 
 	$('input[id="gehalt1"]').on('change, keyup', function(){
 
-		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
-		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
-
-		//falls im anderen Feld keine Eingabe steht (=false)
-		if (!gehalt2)
-		{
-			gehalt2 = 0;
-		}
-		if (!gehalt1)
-		{
-			gehalt1 = 0;
-		}
-
-		var gehalt3 = gehalt1 + gehalt2;
-
-		$('#gesamtgehalt').html(gehalt3);
-
-		berechne_gebuehren();
+		berechneGesamtgehalt(); 
 	 		
 	})
 
 
 	$('input[id="gehalt2"]').on('change, keyup', function(){
 
-		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
-		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
-
-		//falls im anderen Feld keine Eingabe steht (=false)
-		if (!gehalt1)
-		{
-			gehalt1 = 0;
-		}
-		if (!gehalt2)
-		{
-			gehalt2 = 0;
-		}
-
-		var gehalt3 = gehalt1 + gehalt2;
-
-		$('#gesamtgehalt').html(gehalt3);
-
-		berechne_gebuehren();
-	 		
+		berechneGesamtgehalt(); 
+	
 	})
 
 
@@ -362,24 +333,7 @@ $( document ).ready(function() {
  	//deshalb die Blöcke nun doppelt
 	$('input[id="gehalt1"]').on('mouseup', function(){
 
-		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
-		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
-
-		//falls im anderen Feld keine Eingabe steht (=false)
-		if (!gehalt2)
-		{
-			gehalt2 = 0;
-		}
-		if (!gehalt1)
-		{
-			gehalt1 = 0;
-		}
-
-		var gehalt3 = gehalt1 + gehalt2;
-
-		$('#gesamtgehalt').html(gehalt3);
-
-		berechne_gebuehren();
+		berechneGesamtgehalt(); 
 	 		
 	})
 
@@ -387,28 +341,14 @@ $( document ).ready(function() {
 
 	$('input[id="gehalt2"]').on('mouseup', function(){
 
-		gehalt1 = parseFloat(document.getElementById("gehalt1").value);
-		gehalt2 = parseFloat(document.getElementById("gehalt2").value);
-
-		//falls im anderen Feld keine Eingabe steht (=false)
-		if (!gehalt1)
-		{
-			gehalt1 = 0;
-		}
-		if (!gehalt2)
-		{
-			gehalt2 = 0;
-		}
-
-		var gehalt3 = gehalt1 + gehalt2;
-
-		$('#gesamtgehalt').html(gehalt3);
-
-		berechne_gebuehren();
+		berechneGesamtgehalt(); 
 	 		
 	})
 
 });
+
+
+
 
 
 
