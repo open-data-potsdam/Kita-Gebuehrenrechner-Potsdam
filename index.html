@@ -36,36 +36,29 @@
 
 				</div>
 
-
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
-					<table class="table">
-					
-						<tr>
-						 	<th> 
-						 		<strong>Gehalt erstes Elternteil in €:</strong>
-					 		</th>
-					 		<th> 
-						 		<strong>Gehalt zweites Elternteil in €:</strong>
-					 		</th>
-				 		</tr>
-				 		<tr>
-				 			<th>
-
-				 				<p class="input">
-						 			<input type="number" name="gehalt1" id="gehalt1" placeholder="0 €">
-					 			</p>
-						 	</th>
-						 	<th>
-						 		
-						 		<p class="input">
-						 			<input type="number" name="gehalt2" id="gehalt2" placeholder="0 €">
-					 			</p>
-						 	</th>
-					 	</tr>
-					</table>
-	  					
-					Das Gesamtgehalt der beiden Eltern beträgt: <b><output id="gesamtgehalt" type="number"></output> €.</b> 
-				</div>	
+			      	<!-- Example row of columns -->
+			      	<b>Jahreseinkommen:</b><br>
+				   	<div class="row">   
+				        <div class="col-md-6">
+				        	<p>
+					        	<div class="input">
+					        		1. Elterngehalt:
+					 				<input type="number" name="gehalt1" id="gehalt1" placeholder="0"> €
+						 		</div>
+					 		</p>
+					    </div>
+					    <div class="col-md-6">
+					    	<p>
+						    	<div class="input">
+						    		2. Elterngehalt:						        
+				          			<input type="number" name="gehalt2" id="gehalt2" placeholder="0"> €
+								</div>
+							</p>
+					    </div>
+		      		</div>
+		      		<p>Das Gesamtgehalt der Eltern beträgt: <b><output id="gesamtgehalt" type="number"></output> €.</b></p>
+	      		</div>
 
 
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
@@ -80,7 +73,7 @@
 
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
 				    <form name="Stundenform">
-						 <b>Anzahl der Stunden pro Tag:</b><br>
+						 <b>Anzahl der täglichen Betreuungsstunden:</b><br>
 						 <label><input type="radio" name="Stundenanzahl" value="6" checked> &lt; <span id="stunden-1">6</span> Stunden</label><br>
 						 <label><input type="radio" name="Stundenanzahl" value="8"> &lt; <span id="stunden-2">8</span> Stunden</label><br>
 						 <label><input type="radio" name="Stundenanzahl" value="10"> &lt; <span id="stunden-3">10</span> Stunden</label>
@@ -91,36 +84,33 @@
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
 					<form name="Kinderform">
 						<b>Anzahl der Kinder insgesamt: </b><br>
-						<table class="table">
-							<th>	
-								<label><input type="radio" name="anzahlKinder" value="1" checked><span id="kinder-1"> 1</span> </label>
-							</th>
-							<th>	
+						<div class="row">   
+					        <div class="col-md-2">
+					        	<label><input type="radio" name="anzahlKinder" value="1" checked><span id="kinder-1"> 1</span> </label>
+							</div>
+							<div class="col-md-2">	
 								<label><input type="radio" name="anzahlKinder" value="0.8"><span id="kinder-2"> 2</span></label>
-							</th>
-							<th>	
+							</div>
+							<div class="col-md-2">
 								<label><input type="radio" name="anzahlKinder" value="0.6"><span id="kinder-3"> 3</span></label>
-							</th>
-							<th>	
+							</div>
+							<div class="col-md-2">
 								<label><input type="radio" name="anzahlKinder" value="0.4"><span id="kinder-4"> 4</span></label>
-							</th>	
-							<th>
+							</div>	
+							<div class="col-md-2">
 								<label><input type="radio" name="anzahlKinder" value="0.2"><span id="kinder-5"> 5</span></label>
-							</th>
-							<th>
+							</div>
+							<div class="col-md-2">
 								<label><input type="radio" name="anzahlKinder" value="0"><span id="kinder-6"> >=6</span></label>
-							</th>	
-						</table>
+							</div>
+						</div>
 					</form>
 				</div>
 
-
 		
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
-					<b>
-					Die monatlichen Kita-Gebühren für das Kind betragen: 
-						<b><output id="gebuehr" type="number"></output> €.</b> 
-					</b>
+					<b>Die monatlichen Kita-Gebühren für das Kind betragen:
+						<output id="gebuehr" type="number"></output> €.	</b>
 				</div>
 
 
@@ -132,20 +122,19 @@
 
 				</div><!-- //main content -->
 			</div><!-- //row -->
-		</div> <!-- //container -->
-
 		
-		<p>&nbsp;</p>
+ 			<p>&nbsp;</p>
 
+     	 </div><!-- //container -->
 
 
 	    <footer class="footer">
-		    	<p class="text-muted">
-		    		<small class="text-muted">
-		    			Entstanden im <a href="https://codefor.de/potsdam/" target="_blank">OK Lab Potsdam</a> basierend auf der <a href="https://www.potsdam.de/content/kita-satzung-0" target="_blank">Kita-Satzung</a> (2016). <br>
-		    			Foto von <a href="https://www.flickr.com/photos/130139363@N07/18379668092/in/photostream/" target="_blank">Linh Lưu Huệ</a> (<a href="http://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">CC-Lizenz</a>), Font: <a href="https://www.fontsquirrel.com/fonts/open-sans" target="_blank">Open Sans</a> (<a href="https://www.fontsquirrel.com/license/open-sans" target="_blank">Apache v2.0 Lizenz</a>). 
-		    		</small>
-		    	</p>
+	    	<p class="text-muted">
+	    		<small class="text-muted">
+	    			Entstanden im <a href="https://codefor.de/potsdam/" target="_blank">OK Lab Potsdam</a> basierend auf der <a href="https://www.potsdam.de/content/kita-satzung-0" target="_blank">Kita-Satzung</a> (2016). <br>
+	    			Foto von <a href="https://www.flickr.com/photos/130139363@N07/18379668092/in/photostream/" target="_blank">Linh Lưu Huệ</a> (<a href="http://creativecommons.org/licenses/by/2.0/deed.en" target="_blank">CC-Lizenz</a>), Font: <a href="https://www.fontsquirrel.com/fonts/open-sans" target="_blank">Open Sans</a> (<a href="https://www.fontsquirrel.com/license/open-sans" target="_blank">Apache v2.0 Lizenz</a>). 
+	    		</small>
+	    	</p>
 		</footer>
 
 		
