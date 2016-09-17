@@ -317,6 +317,8 @@ $( document ).ready(function() {
 	$('input[id="gehalt1"]').on('change, keyup', function(){
 
 		berechneGesamtgehalt(); 
+		berechne_gebuehren();
+
 	 		
 	})
 
@@ -324,6 +326,8 @@ $( document ).ready(function() {
 	$('input[id="gehalt2"]').on('change, keyup', function(){
 
 		berechneGesamtgehalt(); 
+		berechne_gebuehren();
+
 	
 	})
 
@@ -334,6 +338,8 @@ $( document ).ready(function() {
 	$('input[id="gehalt1"]').on('mouseup', function(){
 
 		berechneGesamtgehalt(); 
+		berechne_gebuehren();
+
 	 		
 	})
 
@@ -342,6 +348,8 @@ $( document ).ready(function() {
 	$('input[id="gehalt2"]').on('mouseup', function(){
 
 		berechneGesamtgehalt(); 
+		berechne_gebuehren();
+
 	 		
 	})
 
