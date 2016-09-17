@@ -332,7 +332,7 @@ $( document ).ready(function() {
 	/* Änderungen im Formular */
 	$('input[name="Betreuungsart"], input[name="Stundenanzahl"], input[name="anzahlKinder"]').on('change', function(){
 
-		berechne_gebuehren();
+		berechneGesamtgehalt();
 
 	});
 
