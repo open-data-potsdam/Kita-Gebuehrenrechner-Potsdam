@@ -238,7 +238,7 @@ function berechneKitaGebuehren () {
 
 
 
-//Addieset die beiden Felder mit den Gehältern zum Gesmatgehalt
+//Addiert die beiden Felder mit den Gehältern zum Gesmatgehalt
 function berechneGesamtgehalt() {
 
 	gehalt1 = parseFloat(document.getElementById("gehalt1").value);
@@ -260,7 +260,6 @@ function berechneGesamtgehalt() {
 	berechneKitaGebuehren();
 
 }
-
 
 
 
@@ -303,6 +302,7 @@ $( document ).ready(function() {
 				$('#stunden-3').html('10');
 				break;
 		}
+
 	});
 
 
