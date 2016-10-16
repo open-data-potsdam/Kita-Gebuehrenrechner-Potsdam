@@ -38,12 +38,12 @@
 
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
 			      	<!-- Example row of columns -->
-			      	<b>Jahreseinkommen:</b><br>
+			      	<b>Einkommen:</b><br>
 				   	<div class="row">   
 				        <div class="col-md-6">
 				        	<p>
 					        	<div class="input">
-					        		1. Elterngehalt:
+					        		1. Elterngehalt (pro Jahr):
 					 				<input type="number" name="gehalt1" id="gehalt1" placeholder="0"> €
 						 		</div>
 					 		</p>
@@ -51,7 +51,7 @@
 					    <div class="col-md-6">
 					    	<p>
 						    	<div class="input">
-						    		2. Elterngehalt:						        
+						    		2. Elterngehalt (pro Jahr):						        
 				          			<input type="number" name="gehalt2" id="gehalt2" placeholder="0"> €
 								</div>
 							</p>
@@ -108,9 +108,11 @@
 				</div>
 
 		
-				<div class="col-md-8 col-md-offset-2 panel panel-default">
-					<b>Die monatlichen Gebühren für das Kind betragen:
-						<output id="gebuehr" type="number"></output> €.	</b>
+				<div id="result" class="col-md-8 col-md-offset-2 panel panel-default">
+					<strong>
+						Die monatlichen Gebühren für das Kind betragen:
+						<span id="gebuehr"></span> €.
+					</strong>
 				</div>
 
 

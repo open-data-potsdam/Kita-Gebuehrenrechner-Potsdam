@@ -231,7 +231,9 @@ function berechneKitaGebuehren () {
 			}
 		}
 
-		document.getElementById("gebuehr").value = Math.round(ergebnis * multiplikatorKinderAnzahl *100) /100;
+		$perMonth = Math.round(ergebnis * multiplikatorKinderAnzahl * 100) / 100;
+		$('#gebuehr').html($perMonth);
+
 
 	});
 }
