@@ -15,7 +15,7 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-		<link rel="stylesheet" type="text/css" href="style.css">	
+		<link rel="stylesheet" type="text/css" href="style.css">
 
 		<!-- JavaScript -->
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -28,7 +28,7 @@
 
 		<div class="container">
 			<div class="row">
-				
+
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
 
 					<h1>Kita-Geb&uuml;hren-Rechner</h1>
@@ -37,46 +37,42 @@
 				</div>
 
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
-			      	<!-- Example row of columns -->
-			      	<b>Einkommen:</b><br>
-				   	<div class="row">   
-				        <div class="col-md-6">
-				        	<p>
-					        	<div class="input">
-					        		1. Elterngehalt (pro Jahr):
-					 				<input type="number" name="gehalt1" id="gehalt1" placeholder="0"> €
-						 		</div>
-					 		</p>
-					    </div>
-					    <div class="col-md-6">
-					    	<p>
-						    	<div class="input">
-						    		2. Elterngehalt (pro Jahr):						        
-				          			<input type="number" name="gehalt2" id="gehalt2" placeholder="0"> €
-								</div>
-							</p>
-					    </div>
-		      		</div>
-		      		<p>Das Gesamtgehalt der Eltern beträgt: <b><output id="gesamtgehalt" type="number"></output> €.</b></p>
-	      		</div>
+					<!-- Example row of columns -->
+					<b>Einkommen:</b><br>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input">
+								1. Elterngehalt (pro Jahr):
+								<input type="number" name="gehalt1" id="gehalt1" placeholder="0"> €
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="input">
+								2. Elterngehalt (pro Jahr):
+								<input type="number" name="gehalt2" id="gehalt2" placeholder="0"> €
+							</div>
+						</div>
+					</div>
+					<p>Das Gesamtgehalt der Eltern beträgt: <b><output id="gesamtgehalt" type="number"></output> €.</b></p>
+				</div>
 
 
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
 					<form name="Betreuungsform">
-						 <b>Art der Betreuung:</b><br>
-						  <label><input type="radio" name="Betreuungsart" value="krippe" checked> <span id="krippe">Krippe</span></label><br>
-						  <label><input type="radio" name="Betreuungsart" value="kindergarten"> <span id="kindergarten">Kindergarten</span></label><br>
-						  <label><input type="radio" name="Betreuungsart" value="hort"> <span id="hort">Hort</span></label>
+						<b>Art der Betreuung:</b><br>
+						<label><input type="radio" name="Betreuungsart" value="krippe" checked> <span id="krippe">Krippe</span></label><br>
+						<label><input type="radio" name="Betreuungsart" value="kindergarten"> <span id="kindergarten">Kindergarten</span></label><br>
+						<label><input type="radio" name="Betreuungsart" value="hort"> <span id="hort">Hort</span></label>
 					</form>
 				</div>
 
 
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
-				    <form name="Stundenform">
-						 <b>Dauer der täglichen Betreuung:</b><br>
-						 <label><input type="radio" name="Stundenanzahl" value="6" checked> &lt; <span id="stunden-1">6</span> Stunden</label><br>
-						 <label><input type="radio" name="Stundenanzahl" value="8"> &lt; <span id="stunden-2">8</span> Stunden</label><br>
-						 <label><input type="radio" name="Stundenanzahl" value="10"> &lt; <span id="stunden-3">10</span> Stunden</label>
+					<form name="Stundenform">
+						<b>Dauer der täglichen Betreuung:</b><br>
+						<label><input type="radio" name="Stundenanzahl" value="6" checked> &lt; <span id="stunden-1">6</span> Stunden</label><br>
+						<label><input type="radio" name="Stundenanzahl" value="8"> &lt; <span id="stunden-2">8</span> Stunden</label><br>
+						<label><input type="radio" name="Stundenanzahl" value="10"> &lt; <span id="stunden-3">10</span> Stunden</label>
 					</form>
 				</div>
 
@@ -84,11 +80,11 @@
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
 					<form name="Kinderform">
 						<b>Anzahl der Kinder insgesamt: </b><br>
-						<div class="row">   
-					        <div class="col-md-2">
-					        	<label><input type="radio" name="anzahlKinder" value="1" checked><span id="kinder-1"> 1</span> </label>
+						<div class="row">
+							<div class="col-md-2">
+								<label><input type="radio" name="anzahlKinder" value="1" checked><span id="kinder-1"> 1</span> </label>
 							</div>
-							<div class="col-md-2">	
+							<div class="col-md-2">
 								<label><input type="radio" name="anzahlKinder" value="0.8"><span id="kinder-2"> 2</span></label>
 							</div>
 							<div class="col-md-2">
@@ -96,7 +92,7 @@
 							</div>
 							<div class="col-md-2">
 								<label><input type="radio" name="anzahlKinder" value="0.4"><span id="kinder-4"> 4</span></label>
-							</div>	
+							</div>
 							<div class="col-md-2">
 								<label><input type="radio" name="anzahlKinder" value="0.2"><span id="kinder-5"> 5</span></label>
 							</div>
@@ -107,7 +103,7 @@
 					</form>
 				</div>
 
-		
+
 				<div id="result" class="col-md-8 col-md-offset-2 panel panel-default">
 					<strong>
 						Die monatlichen Gebühren für das Kind betragen:
@@ -119,27 +115,24 @@
 				<div class="col-md-8 col-md-offset-2 panel panel-default">
 					<span style="color:#FF0000">
 						<b>Hinweis: dieser Kitarechner ist kein offizielles Angebot der Stadt Potsdam, alle Angaben ohne Gewähr!</b>
-					</span>	
+					</span>
 				</div>
 
-				</div><!-- //main content -->
 			</div><!-- //row -->
-		
- 			<p>&nbsp;</p>
 
-     	 </div><!-- //container -->
+			<p>&nbsp;</p>
+
+		</div><!-- //container -->
 
 
-	    <footer class="footer">
-	    	<p class="text-muted">
-	    		<small class="text-muted">
-	    			Entstanden im <a href="https://codefor.de/potsdam/" target="_blank">OK Lab Potsdam</a> basierend auf der <a href="https://www.potsdam.de/amtsblatt-082018" target="_blank">Kita-Elternbeitragsordnung</a> (Amtsblatt 08/2018). <br>
-	    			Font: <a href="https://www.fontsquirrel.com/fonts/open-sans" target="_blank">Open Sans</a> (<a href="https://www.fontsquirrel.com/license/open-sans" target="_blank">Apache v2.0 Lizenz</a>). 
-	    		</small>
-	    	</p>
+		<footer class="footer">
+			<p class="text-muted">
+			<small class="text-muted">
+				Entstanden im <a href="https://codefor.de/potsdam/" target="_blank">OK Lab Potsdam</a> basierend auf der <a href="https://www.potsdam.de/amtsblatt-082018" target="_blank">Kita-Elternbeitragsordnung</a> (Amtsblatt 08/2018). <br>
+				Font: <a href="https://www.fontsquirrel.com/fonts/open-sans" target="_blank">Open Sans</a> (<a href="https://www.fontsquirrel.com/license/open-sans" target="_blank">Apache v2.0 Lizenz</a>).
+			</small>
+			</p>
 		</footer>
-
-		
 
 	</body>
 </html>
