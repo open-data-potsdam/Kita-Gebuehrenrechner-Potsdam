@@ -98,77 +98,8 @@ function berechneKitaGebuehren () {
 	else if (gesamtgehalt.value < 92001) {
 		gehaltId = 28;
 	}
-	else if (gesamtgehalt.value < 94501) {
-		gehaltId = 29;
-	}
-	else if (gesamtgehalt.value < 97001) {
-		gehaltId = 30;
-	}
-	else if (gesamtgehalt.value < 99501) {
-		gehaltId = 31;
-	}
-	else if (gesamtgehalt.value < 102001) {
-		gehaltId = 32;
-	}
-	else if (gesamtgehalt.value < 104501) {
-		gehaltId = 33;
-	}
-	else if (gesamtgehalt.value < 107001) {
-		gehaltId = 34;
-	}
-	else if (gesamtgehalt.value < 109501) {
-		gehaltId = 35;
-	}
-	else if (gesamtgehalt.value < 112001) {
-		gehaltId = 36;
-	}
-	else if (gesamtgehalt.value < 114501) {
-		gehaltId = 37;
-	}
-	else if (gesamtgehalt.value < 117001) {
-		gehaltId = 38;
-	}
-	else if (gesamtgehalt.value < 119501) {
-		gehaltId = 39;
-	}
-	else if (gesamtgehalt.value < 122001) {
-		gehaltId = 40;
-	}
-	else if (gesamtgehalt.value < 124501) {
-		gehaltId = 41;
-	}
-	else if (gesamtgehalt.value < 127001) {
-		gehaltId = 42;
-	}
-	else if (gesamtgehalt.value < 129501) {
-		gehaltId = 43;
-	}
-	else if (gesamtgehalt.value < 132001) {
-		gehaltId = 44;
-	}
-	else if (gesamtgehalt.value < 134501) {
-		gehaltId = 45;
-	}
-	else if (gesamtgehalt.value < 137001) {
-		gehaltId = 46;
-	}
-	else if (gesamtgehalt.value < 139501) {
-		gehaltId = 47;
-	}
-	else if (gesamtgehalt.value < 142001) {
-		gehaltId = 48;
-	}
-	else if (gesamtgehalt.value < 144501) {
-		gehaltId = 49;
-	}
-	else if (gesamtgehalt.value < 147001) {
-		gehaltId = 50;
-	}
-	else if (gesamtgehalt.value < 149501) {
-		gehaltId = 51;
-	}
 	else {
-		gehaltId = 52;
+		gehaltId = 29;
 	}
 
 
